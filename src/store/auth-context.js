@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { authenticate, getUser } from "../auth/authenticate";
 
 const authProvider = {
   isAuthenticate: false,
-  signIn: (callback) => {
-    authProvider.isAuthenticate = true;
-    setTimeout(callback, 100);
-  },
+  signIn: () => {},
   signOut: (callback) => {
     authProvider.isAuthenticate = false;
     setTimeout(callback, 100);
@@ -15,23 +14,27 @@ const authProvider = {
 const AuthContext = React.createContext(null);
 
 export default function AuthProvider({ children }) {
+  const navigate = useNavigate();
+
   const [user, setUser] = useState(null);
+  const [isAuthen, setIsAuthen] = useState(false);
 
-  const signIn = (newUser, callback) => {
-    return authProvider.signIn(() => {
-      setUser(newUser);
-      callback();
-    });
+  const signIn = async (userLogin) => {
+    const isAuthenticated = await authenticate(userLogin);
+    if (isAuthenticated) {
+      setUser(getUser(userLogin));
+      setIsAuthen(true);
+    }
+    return isAuthenticated;
   };
 
-  const signOut = (callback) => {
-    return authProvider.signOut(() => {
-      setUser(null);
-      callback();
-    });
+  const signOut = () => {
+    setUser(null);
+    setIsAuthen(false);
+    navigate("/");
   };
 
-  const value = { user, signIn, signOut };
+  const value = { isAuthen, user, signIn, signOut };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

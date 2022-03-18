@@ -5,18 +5,11 @@ import "./Home.css";
 
 const Home = () => {
   const auth = useAuth();
-  const navigate = useNavigate();
 
   return (
     <p>
-      Welcome {auth.user}!{" "}
-      <button
-        onClick={() => {
-          auth.signOut(() => navigate("/"));
-        }}
-      >
-        Sign out
-      </button>
+      Welcome {auth?.user?.name}!{" "}
+      <button onClick={() => auth.signOut()}>Sign out</button>
     </p>
   );
 };
