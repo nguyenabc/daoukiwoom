@@ -1,0 +1,35 @@
+.tab-btn {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 2em;
+}
+
+.tab-btn a {
+  padding: 15px 30px;
+  text-decoration: none;
+  color: #999999;
+}
+
+.tab-btn .active {
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.tab-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tab-content .number {
+  font-size: 5em;
+  font-weight: 600;
+  color: #cfe5ff;
+  text-align: center;
+}
+
+.tab-content .text {
+  color: #ffffff;
+  text-align: center;
+}
