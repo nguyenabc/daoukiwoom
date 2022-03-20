@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { authenticate, getUser } from "../auth/authenticate";
 
-const authProvider = {
-  isAuthenticate: false,
-  signIn: () => {},
-  signOut: (callback) => {
-    authProvider.isAuthenticate = false;
-    setTimeout(callback, 100);
-  },
-};
-
 const AuthContext = React.createContext(null);
 
 export default function AuthProvider({ children }) {

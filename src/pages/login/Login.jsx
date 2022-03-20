@@ -46,21 +46,21 @@ const Login = () => {
       <div className="form">
         <form className="login-form" onSubmit={handleSubmit}>
           {msgAuthentication && (
-            <p className="message">
+            <span className="message">
               * Your username or password is not correct. Please check again!
-            </p>
+            </span>
           )}
           <input type="text" name="username" placeholder="username" />
           {msgUsername && (
-            <p className="message">* Please input your username.</p>
+            <span className="message">* Please input your username.</span>
           )}
 
           <input type="password" name="password" placeholder="password" />
           {msgPassword && (
-            <p className="message">* Please input your password.</p>
+            <span className="message">* Please input your password.</span>
           )}
 
-          <button>login</button>
+          <button name="login">login</button>
         </form>
       </div>
     </div>
