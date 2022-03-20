@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 const RequiredAuth = ({ children }) => {
-  let auth = useAuth();
-  let location = useLocation();
+  const auth = useAuth();
+  const location = useLocation();
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!auth?.isAuthen) {
+  const userLogined = () => {
+    if (user) {
+      auth?.updateUserLogined(user);
+    }
+  };
+
+  useEffect(() => {
+    userLogined();
+  }, []);
+
+  if (!auth?.isAuthen && !user) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
   return children;

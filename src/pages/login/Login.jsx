@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import "./Login.css";
@@ -7,12 +7,22 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const auth = useAuth();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   const [msgUsername, setMsgUsername] = useState(false);
   const [msgPassword, setMsgPassword] = useState(false);
   const [msgAuthentication, setAuthentication] = useState(false);
 
   const from = location?.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    if (user) {
+      auth?.updateUserLogined(user);
+      navigate("/home", {
+        replace: true,
+      });
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

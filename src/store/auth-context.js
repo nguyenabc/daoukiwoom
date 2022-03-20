@@ -14,6 +14,7 @@ export default function AuthProvider({ children }) {
     const isAuthenticated = await authenticate(userLogin);
     if (isAuthenticated) {
       setUser(getUser(userLogin));
+      localStorage.setItem("user", JSON.stringify(getUser(userLogin)));
       setIsAuthen(true);
     }
     return isAuthenticated;
@@ -22,10 +23,16 @@ export default function AuthProvider({ children }) {
   const signOut = () => {
     setUser(null);
     setIsAuthen(false);
+    localStorage.removeItem("user");
     navigate("/");
   };
 
-  const value = { isAuthen, user, signIn, signOut };
+  const updateUserLogined = (userInfo) => {
+    setUser(userInfo);
+    setIsAuthen(true);
+  };
+
+  const value = { isAuthen, user, signIn, signOut, updateUserLogined };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
