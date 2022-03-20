@@ -1,6 +1,6 @@
 import React from "react";
-import { useAuth } from "../../hooks/useAuth";
-import DropdownLinks from "../Dropdown/DropdownLinks";
+import { useAuth } from "../../../hooks/useAuth";
+import DropdownLinks from "../../Dropdown/DropdownLinks";
 import "./TopNavigate.css";
 
 const NAVIGATE_LINKS = [
@@ -15,7 +15,7 @@ const NAVIGATE_LINKS = [
 const TopNavigate = () => {
   const auth = useAuth();
 
-  const logOutHandler = () => auth.signOut();
+  const logOutHandler = () => auth?.signOut();
 
   return (
     <div>
@@ -39,7 +39,11 @@ const TopNavigate = () => {
           links={[{ url: "", label: "Company C" }]}
         />
         <div className="logout">
-          <button className="logout-btn" onClick={logOutHandler}>
+          <button
+            name="logout-btn"
+            className="logout-btn"
+            onClick={logOutHandler}
+          >
             <i className="fa fa-sign-out"></i> Log out
           </button>
         </div>

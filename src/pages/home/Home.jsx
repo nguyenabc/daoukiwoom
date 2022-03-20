@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../components/Footer/Footer";
-import TopNavigate from "../../components/Navigate/TopNavigate";
+import TopNavigate from "../../components/Navigate/TopNavigate/TopNavigate";
 import ServiceTemplate from "../../components/ServiceTemplate/ServiceTemplate";
 import Tabs from "../../components/Tabs/Tabs";
 import "./Home.css";

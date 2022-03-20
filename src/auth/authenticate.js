@@ -35,7 +35,7 @@ const getUser = (userInput) => {
   return user;
 };
 
-const authenticate = async (userInput) => {
+const authenticate = (userInput) => {
   try {
     const listUser = JSON.parse(localStorage.getItem("users"));
 
