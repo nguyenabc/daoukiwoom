@@ -1,16 +1,38 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import Footer from "../../components/Footer/Footer";
+import TopNavigate from "../../components/Navigate/TopNavigate";
+import ServiceTemplate from "../../components/ServiceTemplate/ServiceTemplate";
+import Tabs from "../../components/Tabs/Tabs";
 import "./Home.css";
 
 const Home = () => {
-  const auth = useAuth();
-
   return (
-    <p>
-      Welcome {auth?.user?.name}!{" "}
-      <button onClick={() => auth.signOut()}>Sign out</button>
-    </p>
+    <>
+      <div className="home-page">
+        <TopNavigate />
+        <div className="introduction">
+          <div className="left">
+            <p>
+              Asia IT <br /> Market Place
+            </p>
+          </div>
+          <div className="right">
+            <Tabs />
+          </div>
+        </div>
+      </div>
+      <div className="highlight">
+        <p>
+          You are now viewing an <b>IT Software</b> that has been verified by{" "}
+          <b>over 1 million users</b>
+        </p>
+      </div>
+      <div className="services">
+        <p className="title">IT CLOUD SEA'S IT SERVICE</p>
+        <ServiceTemplate />
+      </div>
+      <Footer />
+    </>
   );
 };
 

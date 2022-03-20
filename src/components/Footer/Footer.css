@@ -1,0 +1,26 @@
+.footer {
+  background: #f3f9ff;
+}
+
+.price-container {
+  padding: 5em;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  border-top: 1px solid #999999;
+}
+
+.office-info {
+  padding: 40px;
+  text-align: left;
+}
+
+.office-info.border-right {
+  border-right: 1px solid #999999;
+}

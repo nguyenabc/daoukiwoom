@@ -1,39 +1,44 @@
-.Home {
-    text-align: center;
-  }
-  
-  .Home-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .Home-logo {
-      animation: Home-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .Home-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .Home-link {
-    color: #61dafb;
-  }
-  
-  @keyframes Home-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
+.home-page {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../../public/home-background.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 60% 100%;
+}
+
+.introduction {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+}
+
+.introduction .left {
+  text-align: left;
+  display: inline-flex;
+  align-content: center;
+  margin: 7em;
+}
+
+.left p {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+.highlight {
+  background-color: #ffd1e8;
+  padding: 2em 0;
+  text-align: center;
+}
+
+.services {
+  width: 100%;
+  height: 100%;
+  padding-top: 3em;
+  text-align: center;
+}
+
+.services .title {
+  font-size: 3em;
+  font-weight: 700;
+}

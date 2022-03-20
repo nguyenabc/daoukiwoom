@@ -1,0 +1,35 @@
+.price-box {
+  width: 18em;
+  height: 13em;
+  background: #ffffff;
+  z-index: 2;
+  border-radius: 10px;
+  text-align: left;
+  padding: 2em;
+}
+
+.price-box .title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.price-box .hint {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.price-box .price {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.price-box .price .number {
+  font-size: 3.5em;
+  font-weight: 700;
+}
+
+.price-box .price .currency {
+  font-size: 0.8em;
+  font-weight: 700;
+}
