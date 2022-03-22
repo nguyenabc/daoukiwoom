@@ -1,7 +1,7 @@
 .service-container {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 5em 0;
+  padding: 5em 1em;
   align-items: center;
 }
 
