@@ -38,7 +38,7 @@ const TopNavigate = () => {
           labelName="Partner Market Place"
           links={[{ url: "", label: "Company C" }]}
         />
-        <div className="logout">
+        <div>
           <button
             name="logout-btn"
             className="logout-btn"

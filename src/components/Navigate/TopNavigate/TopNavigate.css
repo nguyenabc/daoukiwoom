@@ -5,7 +5,7 @@
   justify-content: end;
 }
 
-.top-bar .logout .logout-btn {
+.top-bar .logout-btn {
   font-size: 0.7rem;
   border-radius: 10px;
   border: none;
@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-.top-bar .dropdown .logout-btn:hover {
+.top-bar .logout-btn:hover {
   background-color: #cfe5ff;
   z-index: 1;
 }
@@ -61,4 +61,28 @@
 .nav-link a {
   color: #ffffff;
   text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  div.top-bar {
+    padding-right: 2%;
+  }
+
+  div.navigation {
+    margin: 0 3em;
+  }
+
+  div.logo-container {
+    gap: 8em;
+  }
+}
+
+@media (min-width: 1025px) {
+  div.top-bar {
+    padding-right: 2%;
+  }
+
+  div.navigation {
+    margin: 0 3em;
+  }
 }

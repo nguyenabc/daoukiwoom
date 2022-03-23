@@ -24,3 +24,10 @@
 .office-info.border-right {
   border-right: 1px solid #999999;
 }
+
+@media (max-width: 1024px) {
+  div.price-container {
+    padding: 5em 0.5em;
+    gap: 1rem;
+  }
+}
