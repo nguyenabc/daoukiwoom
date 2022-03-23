@@ -1,6 +1,6 @@
 .login-page {
   background: linear-gradient(95deg, rgb(0, 0, 179) 0%, rgb(0, 0, 77) 80%);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   padding: 8% 0 0;
   margin: auto;
