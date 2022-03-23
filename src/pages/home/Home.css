@@ -43,3 +43,11 @@
   font-size: 3em;
   font-weight: 700;
 }
+
+@media (min-width: 2560px) {
+  div.container {
+    margin: 0 35%;
+    width: fit-content;
+    border: 1px solid #cecece;
+  }
+}

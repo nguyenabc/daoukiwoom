@@ -18,9 +18,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-@media (min-width: 2560px) {
-  body {
-    margin: 0 18%;
-  }
-}
